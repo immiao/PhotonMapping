@@ -1,6 +1,6 @@
 # Photon Mapping
 
-#### What is Photon Mapping?
+### What is Photon Mapping?
 
 Photon mapping is a two-pass global illumination algorithm developed by Henrik Wann Jensen that approximately solves the rendering equation. Rays from the light source and rays from the camera are traced independently until some termination criterion is met, then they are connected in a second step to produce a radiance value.
 
@@ -9,7 +9,7 @@ Here's a [good introduction](https://web.cs.wpi.edu/~emmanuel/courses/cs563/writ
 Screenshots
 -----------
 
-#### Results (11 million photons)
+### Results (11 million photons)
 
 <table class="image">
 <tr>
@@ -47,19 +47,19 @@ Photons are experiencing z-flipping because there're too many photons and if the
 </tr>
 </table>
 
-#### Photon Probability
+### Photon Probability
 
 For the bidirectional photon mapping, we calculate the probability of our photons in the pre-pass and store them in the buffer in order to use them in the second-pass.
 
 ![](VCM/img/probability0.gif)
 
-#### Different Searching Radius
+### Different Searching Radius
 
 Radius is an important parameter to adjust in photon mapping. In the second-pass, we shoot rays from the camera and get the hit-points. For each hit-point, we determine which photons are within the radius. Then we simply average the color of the photons, or using some weighting strategies (we weight them by the probability of the path in bidirection photon mapping), to get the color of the hit-point.
 
 ![](VCM/img/radius0.jpg)
 
-#### Different Amount of Photons
+### Different Amount of Photons
 
 Photon mapping is a biased estimator. Increase the number of photons can significantly reduce the error of this estimator. But photon mapping is consistent, which means it can still get a totally correct result. Consider we shoot infinite photons into the scene and reduce the radius to an infinitesimal amount, which means the hit-point exactly hit the photons and you don't need to average anything which introduces bias into the radiance of the hit-point.
 
@@ -67,7 +67,7 @@ As you can see, more photons lead to a more correct result.
 
 ![](VCM/img/amounts.jpg)
 
-#### Uniform Hash Grid
+### Uniform Hash Grid
 
 We use hash grid to store our photons, which is an efficient data structures when you're search the near photons for the hit-points. In our algorithm, we set the radius to half of the grid width. By doing this, we only need to check 8 grids in each search.
 
