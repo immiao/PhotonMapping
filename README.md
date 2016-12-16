@@ -30,7 +30,7 @@ Screenshots
 </tr>
 </table>
 
-#### Photon Visualization
+### Photon Visualization
 
 The shadow looks not correct enough because in this image, we shoot photons only from one corner of our parallelogram light. We also visualize the bounding box of our objects.
 
@@ -90,3 +90,15 @@ Time cost in the second-pass: (cornell box scene with diffuse walls and a specul
 Time cost in the second-pass: (cornell box scene with diffuse walls and a glass cow in the middle, which means rays hitting the cow take more time)
 
 ![](VCM/img/chart2.png)
+
+# Configure
+
+* `cd ${PATH}/VCM`
+* `mkdir build`
+* `cd build`
+* `cmake-gui ..`
+* `configure` (with lots of warnings)
+* `generate`
+* Double click *VCM-PathTracer.sln*
+* Set *optixPathTracer* as start-up project
+* Run
