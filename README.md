@@ -75,7 +75,7 @@ We use hash grid to store our photons, which is an efficient data structures whe
 
 We didn't intend to visualize the hash grids. Luckily, if we increase the radius but remain the grid width, we get the following image, which visualize the grids on the walls. It's caused by the hit-points near the center of the grids, which miss lots of photons outside their 8 grids.
 
-![](VCM/img/pm_bug.png)
+![](VCM/img/pm_bug.PNG)
 
 ### Analysis
 
